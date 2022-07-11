@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1c246108-26df-4106-be9d-ca72ffd49933",
+    "priority": 0,
+    "httpRequest": {},
+    "times": {
+      "unlimited": true
+    },
+    "timeToLive": {
+      "unlimited": true
+    },
+    "httpResponseTemplate": {
+      "templateType": "JAVASCRIPT",
+      "template": "return { statusCode: 200, body: { method: request.method, path: request.path, pathParameters: request.pathParameters, queryStringParameters: request.queryStringParameters, headers: request.headers, cookies: request.cookies, body: request.body } };"
+    }
+  }
+]

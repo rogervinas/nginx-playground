@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+
+  load-balancer:
+    image: nginx:1.21.6
+    volumes:
+     - ./nginx/conf.d:/etc/nginx/conf.d
+    ports:
+     - "8080:80"
+    environment:
+     - NGINX_HOST=foobar.com
+     - NGINX_PORT=80
+
+  backend:
+    image: mockserver/mockserver:5.11.2
+    volumes:
+      - ./backend/mockserver.json:/mockserver.json
+    environment:
+      - MOCKSERVER_INITIALIZATION_JSON_PATH=/mockserver.json
+    ports:
+     - "8081:1080"
