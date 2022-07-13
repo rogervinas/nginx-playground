@@ -1,6 +1,24 @@
 [
   {
-    "id": "1c246108-26df-4106-be9d-ca72ffd49933",
+    "priority": 100,
+    "httpRequest": {
+      "path": "/status",
+      "queryStringParameters": {
+        "code": ["\\d+"]
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "JAVASCRIPT",
+      "template": "return { statusCode: parseInt(request.queryStringParameters.code[0]), body: 'Hello from Backend!' }"
+    },
+    "timeToLive": {
+      "unlimited": true
+    },
+    "times": {
+      "unlimited": true
+    }
+  },
+  {
     "priority": 0,
     "httpRequest": {},
     "times": {

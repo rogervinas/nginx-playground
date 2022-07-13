@@ -4,11 +4,23 @@
 
 ```
 docker compose up -d
+```
+
+## Test manually
+
+* X-Real-Ip
+```
 curl -w'\n' http://localhost:8080/hello
 curl -w'\n' http://localhost:8080/hello -H 'X-Forwarded-For: 0.0.0.1'
 curl -w'\n' http://localhost:8080/hello -H 'X-Forwarded-For: 0.0.0.1, 0.0.0.2'
 curl -w'\n' http://localhost:8080/hello -H 'X-Forwarded-For: 0.0.0.1, 0.0.0.2, 0.0.0.3'
 curl -w'\n' http://localhost:8080/hello -H 'X-Forwarded-For: 0.0.0.1, 0.0.0.2, 0.0.0.3, 0.0.0.4'
+```
+
+* Error pages
+```
+curl -w'\n' 'http://localhost:8080/status?code=200'
+curl -w'\n' 'http://localhost:8080/status?code=405'
 ```
 
 ## Documentation

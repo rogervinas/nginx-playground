@@ -1,0 +1,9 @@
+{
+  "status": 500,
+  "title": "Error",
+  "message": "An unexpected error happened",
+  "userMessage": {
+    "title": "Error",
+    "detail": "An unexpected error happened"
+  }
+}
