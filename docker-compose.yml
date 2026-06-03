@@ -14,7 +14,7 @@ services:
      - NGINX_PORT=80
 
   backend:
-    image: mockserver/mockserver:6.0.0
+    image: mockserver/mockserver:6.1.0
     volumes:
       - ./backend/mockserver.json:/mockserver.json
     environment:
