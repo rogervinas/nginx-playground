@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   load-balancer:
-    image: nginx:1.31.2
+    image: nginx:1.31.3
     volumes:
      - ./nginx/conf.d:/etc/nginx/conf.d
      - ./nginx/error:/var/www/json/error
@@ -14,7 +14,7 @@ services:
      - NGINX_PORT=80
 
   backend:
-    image: mockserver/mockserver:7.1.0
+    image: mockserver/mockserver:7.4.0
     volumes:
       - ./backend/mockserver.json:/mockserver.json
     environment:
